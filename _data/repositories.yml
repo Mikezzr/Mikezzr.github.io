@@ -1,14 +1,7 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Mikezzr
 
 repo_description_lines_max: 2
 
-github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+# Add public repositories here when you want them featured on the site.
+github_repos: []
