@@ -6,11 +6,7 @@ Source code for [Mikezzr.github.io](https://Mikezzr.github.io), built with Jekyl
 
 - Homepage: `_pages/about.md`
 - Publications: `_bibliography/papers.bib`
-- Projects: `_projects/`
-- CV page: `_data/cv.yml`
 - CV PDF: `assets/pdf/cv.pdf`
-- News: `_news/`
-- Teaching: `_teachings/`
 - Social links: `_data/socials.yml`
 - Site settings: `_config.yml`
 
@@ -40,4 +36,4 @@ npx prettier . --write
 
 ## Deployment
 
-Pushing to `main` runs `.github/workflows/deploy.yml`, builds the site, and publishes the generated `_site` directory to the `gh-pages` branch.
+Pushing to `main` runs `.github/workflows/deploy.yml`, builds the site, uploads a GitHub Pages artifact, and deploys it directly through the GitHub Pages API.

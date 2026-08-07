@@ -46,31 +46,6 @@ test("mobile navbar can expand/collapse", async ({ page }, testInfo) => {
   await expect(nav).not.toHaveClass(/show/);
 });
 
-test("repositories page renders external stat cards with deterministic fixtures", async ({ page }) => {
-  await preparePage(page, "light");
-  await page.goto("/al-folio/repositories/", { waitUntil: "networkidle" });
-  await stabilizeVisuals(page);
-
-  const renderedCount = (locator) => locator.evaluateAll((images) => images.filter((img) => img.complete && img.naturalWidth > 0).length);
-
-  // Assert the stat-card host explicitly: this spec only ever loads the candidate
-  // site, so accepting the deprecated github-readme-stats host here would let a
-  // _config.yml regression pass unnoticed — helpers.js stubs both hosts, so the
-  // network would stay silent about it.
-  const statCards = page.locator('img[src*="github-stats-extended"]');
-  await expect(statCards.first()).toBeVisible();
-  expect(await renderedCount(statCards)).toBeGreaterThan(0);
-  await expect(page.locator('img[src*="github-readme-stats"]')).toHaveCount(0);
-
-  // Trophies ship disabled (`repo_trophies.enabled: false`) because the free
-  // public github-profile-trophy instance answers HTTP 402 / DEPLOYMENT_DISABLED
-  // — see docs/CUSTOMIZE.md. Assert the page emits no trophy markup at all
-  // rather than merely no *broken* trophies: helpers.js stubs that host, so a
-  // regression that switched the default back on would render twelve perfectly
-  // healthy stub images here while shipping twelve 402s to real visitors.
-  await expect(page.locator('img[src*="github-profile-trophy"]')).toHaveCount(0);
-});
-
 test("blog pagination uses core Tailwind-native styling contract", async ({ page }) => {
   await preparePage(page, "light");
   await page.goto("/al-folio/blog/", { waitUntil: "networkidle" });
@@ -195,46 +170,6 @@ test("inline code uses compact normal-weight typography", async ({ page }) => {
   expect(inlineCodeStyle.fontWeight).toBeLessThanOrEqual(400);
 });
 
-test("project cards hover with upward lift animation", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name === "mobile", "hover-specific assertion is desktop-only");
-
-  await preparePage(page, "light");
-  await page.goto("/al-folio/projects/", { waitUntil: "networkidle" });
-  await stabilizeVisuals(page);
-
-  const card = page.locator(".projects .hoverable").first();
-  await expect(card).toBeVisible();
-
-  const before = await card.boundingBox();
-  await card.hover();
-  await page.waitForTimeout(150);
-  const after = await card.boundingBox();
-
-  expect(before).not.toBeNull();
-  expect(after).not.toBeNull();
-  expect(after.y).toBeLessThan(before.y);
-});
-
-test("teaching calendar toggle has pointer cursor and toggles calendar visibility", async ({ page }) => {
-  await preparePage(page, "light");
-  await page.goto("/al-folio/teaching/", { waitUntil: "networkidle" });
-  await stabilizeVisuals(page);
-
-  const button = page.locator("#calendar-toggle-btn");
-  await expect(button).toBeVisible();
-
-  const buttonStyles = await button.evaluate((el) => {
-    const computed = window.getComputedStyle(el);
-    return { cursor: computed.cursor, fontSize: computed.fontSize };
-  });
-  expect(buttonStyles.cursor).toBe("pointer");
-  expect(Number.parseFloat(buttonStyles.fontSize)).toBeGreaterThan(12);
-
-  await button.click();
-  await expect(page.locator("#calendar-container")).toBeVisible();
-  await expect(button).toContainText("Hide Calendar");
-});
-
 test("toc sidebar renders with tocbot styling and data-toc-text label", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name === "mobile", "TOC sidebar is hidden on mobile viewport");
 
@@ -329,7 +264,7 @@ test("core pages no longer emit jQuery-style runtime errors", async ({ page }) =
   });
 
   await preparePage(page, "light");
-  const pages = ["/al-folio/", "/al-folio/projects/", "/al-folio/blog/2024/photo-gallery/", "/al-folio/blog/2023/tables/"];
+  const pages = ["/al-folio/", "/al-folio/blog/2024/photo-gallery/", "/al-folio/blog/2023/tables/"];
 
   for (const target of pages) {
     await page.goto(target, { waitUntil: "networkidle" });
