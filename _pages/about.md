@@ -9,7 +9,7 @@ profile:
   image_circular: false
   more_info: >
     <p>Shenzhen, China</p>
-    <p>email: zirongzeng <span aria-hidden="true">AT</span> link.cuhk.edu.cn</p>
+    <p class="profile-email">email: zirongzeng <span aria-hidden="true">AT</span> link.cuhk.edu.cn</p>
 
 selected_papers: true
 social: true

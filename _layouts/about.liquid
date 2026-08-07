@@ -1,6 +1,59 @@
 ---
 layout: default
 ---
+<style>
+  .profile .more-info p {
+    display: block;
+    margin: 0;
+  }
+
+  .profile .more-info .profile-email {
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+
+  .profile .profile-social {
+    margin-top: 0.55rem;
+    text-align: left;
+  }
+
+  .profile .profile-social .contact-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .profile .profile-social .contact-icons a {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .profile .profile-social .contact-icons a img,
+  .profile .profile-social .contact-icons a svg {
+    width: 1.45rem;
+    height: 1.45rem;
+    margin: 0;
+  }
+
+  @media (min-width: 576px) {
+    .profile {
+      width: 35%;
+    }
+
+    .profile .more-info .profile-email {
+      font-size: clamp(0.5rem, 1vw, 0.72rem);
+    }
+  }
+</style>
+
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
