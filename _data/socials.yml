@@ -1,8 +1,12 @@
 # Social links are shown in the order listed here.
 github_username: Mikezzr
+scholar_userid: r9krfp4AAAAJ
 
-# scholar_userid: your-google-scholar-id
+codeforces:
+  logo: assets/img/codeforces.jpg
+  title: Codeforces
+  url: https://codeforces.com/profile/little_brush
 
-linkedin_username: Zirong Zeng
+linkedin_username: zirong-zeng-854b94397
 
 x_username: Mikezzr123
