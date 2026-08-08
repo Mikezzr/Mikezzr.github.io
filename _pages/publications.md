@@ -25,9 +25,7 @@ nav_order: 1
   .publication-list .publications .row > .abbr .preview {
     display: block;
     width: 100%;
-    height: clamp(150px, 18vw, 220px);
-    object-fit: contain;
-    object-position: center;
+    height: auto;
   }
 
   .publication-list .publications .row > [id] {
@@ -68,9 +66,6 @@ nav_order: 1
       margin-bottom: 0.75rem;
     }
 
-    .publication-list .publications .row > .abbr .preview {
-      height: 180px;
-    }
   }
 </style>
 
