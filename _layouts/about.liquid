@@ -59,6 +59,36 @@ layout: default
     margin-left: auto;
   }
 
+  .selected-publications .publications .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .selected-publications .publications .row > .abbr {
+    flex: 0 0 clamp(150px, 24%, 230px);
+    width: auto;
+    max-width: none;
+  }
+
+  .selected-publications .publications .row > [id] {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
+  }
+
+  @media (max-width: 575.98px) {
+    .selected-publications .publications .row {
+      display: block;
+    }
+
+    .selected-publications .publications .row > .abbr {
+      width: 180px;
+      max-width: 55%;
+      margin-bottom: 0.75rem;
+    }
+  }
+
   @media (min-width: 576px) and (max-width: 767.98px) {
     .profile.float-right,
     .profile.float-left {
@@ -136,10 +166,12 @@ layout: default
     {% endif %}
 
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <div class="selected-publications">
+        <h2>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </div>
     {% endif %}
   </article>
 </div>
