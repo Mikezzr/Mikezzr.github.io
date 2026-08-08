@@ -26,7 +26,8 @@ nav_order: 1
     display: block;
     width: 100%;
     height: clamp(150px, 18vw, 220px);
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .publication-list .publications .row > [id] {
