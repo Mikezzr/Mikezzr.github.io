@@ -2,6 +2,18 @@
 layout: default
 ---
 <style>
+  .post-header .post-title {
+    margin-bottom: 2rem;
+  }
+
+  .post article {
+    color: #2f3437;
+  }
+
+  html[data-theme='dark'] .post article {
+    color: #e6edf3;
+  }
+
   .profile .more-info p {
     display: block;
     margin: 0;
@@ -86,9 +98,7 @@ layout: default
   .publication-list .publications .author em,
   .publication-list .publications .author u,
   .publication-list .publications .author strong {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
+    font-weight: 400;
   }
 
   .publication-list .publications .links a[href*='arxiv.org'],

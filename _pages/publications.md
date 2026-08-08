@@ -37,9 +37,7 @@ nav_order: 1
   .publication-list .publications .author em,
   .publication-list .publications .author u,
   .publication-list .publications .author strong {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
+    font-weight: 400;
   }
 
   .publication-list .publications .links a[href*='arxiv.org'],
