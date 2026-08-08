@@ -17,9 +17,16 @@ nav_order: 1
   }
 
   .publication-list .publications .row > .abbr {
-    flex: 0 0 clamp(160px, 27%, 260px);
+    flex: 0 0 clamp(180px, 30%, 300px);
     width: auto;
     max-width: none;
+  }
+
+  .publication-list .publications .row > .abbr .preview {
+    display: block;
+    width: 100%;
+    height: clamp(150px, 18vw, 220px);
+    object-fit: cover;
   }
 
   .publication-list .publications .row > [id] {
@@ -55,9 +62,13 @@ nav_order: 1
     }
 
     .publication-list .publications .row > .abbr {
-      width: 200px;
-      max-width: 65%;
+      width: 240px;
+      max-width: 72%;
       margin-bottom: 0.75rem;
+    }
+
+    .publication-list .publications .row > .abbr .preview {
+      height: 180px;
     }
   }
 </style>
