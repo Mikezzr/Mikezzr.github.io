@@ -59,32 +59,53 @@ layout: default
     margin-left: auto;
   }
 
-  .selected-publications .publications .row {
+  .publication-list .publications .row {
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
   }
 
-  .selected-publications .publications .row > .abbr {
-    flex: 0 0 clamp(150px, 24%, 230px);
+  .publication-list .publications .row > .abbr {
+    flex: 0 0 clamp(160px, 27%, 260px);
     width: auto;
     max-width: none;
   }
 
-  .selected-publications .publications .row > [id] {
+  .publication-list .publications .row > [id] {
     flex: 1 1 auto;
     width: auto;
     max-width: none;
   }
 
+  .publication-list .publications .links a[href*='arxiv.org'],
+  .publication-list .publications .links a[href*='doi.org'],
+  .publication-list .publications .links a[href*='github.com'],
+  .publication-list .publications .links a[href*='gitlab.com'],
+  .publication-list .publications .links a[href*='codeberg.org'] {
+    font-size: 0;
+  }
+
+  .publication-list .publications .links a[href*='arxiv.org']::after,
+  .publication-list .publications .links a[href*='doi.org']::after {
+    content: 'paper';
+    font-size: 0.875rem;
+  }
+
+  .publication-list .publications .links a[href*='github.com']::after,
+  .publication-list .publications .links a[href*='gitlab.com']::after,
+  .publication-list .publications .links a[href*='codeberg.org']::after {
+    content: 'code';
+    font-size: 0.875rem;
+  }
+
   @media (max-width: 575.98px) {
-    .selected-publications .publications .row {
+    .publication-list .publications .row {
       display: block;
     }
 
-    .selected-publications .publications .row > .abbr {
-      width: 180px;
-      max-width: 55%;
+    .publication-list .publications .row > .abbr {
+      width: 200px;
+      max-width: 65%;
       margin-bottom: 0.75rem;
     }
   }
@@ -166,7 +187,7 @@ layout: default
     {% endif %}
 
     {% if page.selected_papers %}
-      <div class="selected-publications">
+      <div class="publication-list selected-publications">
         <h2>
           <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
         </h2>
