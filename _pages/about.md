@@ -33,4 +33,4 @@ I am broadly interested in anything that moves us toward AGI, including reinforc
 
 I enjoy thinking deeply about challenging problems and favor simple yet effective ideas. Feel free to reach out if you would like to chat.
 
-Beyond research, I enjoy [competitive programming]({{ '/activities/#competitive-programming' | relative_url }}), [Go]({{ '/activities/#go' | relative_url }}), and [badminton]({{ '/activities/#badminton' | relative_url }}).
+Beyond research, I enjoy [competitive programming]({{ '/competitive-programming/' | relative_url }}), [Go]({{ '/go/' | relative_url }}), and badminton.

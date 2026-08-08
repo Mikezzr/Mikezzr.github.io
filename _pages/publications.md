@@ -34,6 +34,14 @@ nav_order: 1
     max-width: none;
   }
 
+  .publication-list .publications .author em,
+  .publication-list .publications .author u,
+  .publication-list .publications .author strong {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+  }
+
   .publication-list .publications .links a[href*='arxiv.org'],
   .publication-list .publications .links a[href*='doi.org'],
   .publication-list .publications .links a[href*='github.com'],
