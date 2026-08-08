@@ -25,8 +25,12 @@ latest_posts:
   limit: 3
 ---
 
-I am an undergraduate student in Computer Science and Engineering at The Chinese University of Hong Kong, Shenzhen, participating in the CUHK-Shenzhen × SLAI joint program. My interests lie at the intersection of **systems, databases, optimization, and artificial intelligence**. I am particularly interested in building reliable systems and tools for program optimization and AI-assisted software engineering.
+Welcome to my homepage!
 
-Previously, I was a research assistant at the University of California, Berkeley, advised by [Prof. Alvin Cheung](https://people.eecs.berkeley.edu/~akcheung/). I worked on **RuleScript**, an extensible and verifiable language for query rewrite rules, and **FrontierCS**, a benchmark for evaluating language models on open-ended computer science problems.
+I am an incoming PhD student at CUHK-Shenzhen x SLAI. I am fortunate to be supervised by [Prof. Zhi-Quan (Tom) Luo](https://tomluo123.github.io/).
 
-I have also worked on linear programming solver optimization and vehicle routing at the Shenzhen Research Institute of Big Data. Outside research, I enjoy competitive programming, problem setting, and teaching algorithms.
+I am broadly interested in anything that moves us toward AGI, including reinforcement learning, large language models, and world models. I am particularly inspired by work from Google DeepMind, such as AlphaGo, AlphaFold, and AlphaEvolve.
+
+I enjoy thinking deeply about challenging problems and favor simple yet effective ideas. Feel free to reach out if you would like to chat.
+
+Beyond research, I enjoy [competitive programming]({{ '/activities/#competitive-programming' | relative_url }}), [Go]({{ '/activities/#go' | relative_url }}), and [badminton]({{ '/activities/#badminton' | relative_url }}).
