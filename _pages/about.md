@@ -25,8 +25,6 @@ latest_posts:
   limit: 3
 ---
 
-Welcome to my homepage!
-
 I am an incoming PhD student at CUHK-Shenzhen x SLAI. I am fortunate to be supervised by [Prof. Zhi-Quan (Tom) Luo](https://tomluo123.github.io/).
 
 I am broadly interested in anything that moves us toward AGI, including reinforcement learning, large language models, and world models. I am particularly inspired by work from Google DeepMind, such as AlphaGo, AlphaFold, and AlphaEvolve.
