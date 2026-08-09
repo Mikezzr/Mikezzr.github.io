@@ -11,13 +11,13 @@ nav_order: 1
 
 <style>
   .post-header .post-title {
-    color: #18232c;
-    font-weight: 800;
+    color: #25313b;
+    font-weight: 700;
   }
 
   .post article {
-    color: #2f3437;
-    font-weight: 500;
+    color: #3f474e;
+    font-weight: 400;
   }
 
   html[data-theme='dark'] .post-header .post-title {

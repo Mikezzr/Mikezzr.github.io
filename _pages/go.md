@@ -1,84 +1,54 @@
 ---
 layout: page
 permalink: /go/
-title: go
 nav: false
 ---
 
 <style>
   .go-page {
-    --go-board: #d8ad68;
     --go-ink: #27313a;
     --go-accent: #0f766e;
+    position: relative;
+    isolation: isolate;
+    min-height: 26rem;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    background: #f1e5cf;
     color: var(--go-ink);
   }
 
-  .go-page .go-layout {
-    display: grid;
-    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
-    gap: 2.5rem;
-    align-items: center;
-    margin-top: 1.5rem;
-  }
-
-  .go-page .go-board-frame {
-    border: 1px solid #b58b4f;
-    background: #f1e2c2;
-    padding: 0.85rem;
-  }
-
-  .go-page .go-board {
-    position: relative;
-    aspect-ratio: 1;
-    border: 1px solid #78572f;
-    background-color: var(--go-board);
-    background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(11.111% - 1px), #78572f calc(11.111% - 1px), #78572f 11.111%), repeating-linear-gradient(to bottom, transparent 0, transparent calc(11.111% - 1px), #78572f calc(11.111% - 1px), #78572f 11.111%);
-  }
-
-  .go-page .go-stone {
+  .go-page::before {
     position: absolute;
-    width: 9%;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    box-shadow: 0 0.2rem 0.35rem rgba(39, 49, 58, 0.28);
+    z-index: 0;
+    inset: 0;
+    background-image: url('{{ "/assets/img/go.png" | relative_url }}');
+    background-position: center;
+    background-size: cover;
+    content: '';
+    filter: saturate(0.65) contrast(0.92);
+    opacity: 0.16;
   }
 
-  .go-page .go-stone--black {
-    background: #18232c;
+  .go-page .go-layout {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 26rem;
+    align-items: flex-end;
+    padding: 2rem;
   }
 
-  .go-page .go-stone--white {
-    border: 1px solid #9b8a72;
-    background: #f6f1e7;
-  }
-
-  .go-page .go-stone--one {
-    top: 22.2%;
-    left: 33.3%;
-  }
-
-  .go-page .go-stone--two {
-    top: 33.3%;
-    left: 55.6%;
-  }
-
-  .go-page .go-stone--three {
-    top: 55.6%;
-    left: 44.4%;
-  }
-
-  .go-page .go-stone--four {
-    top: 66.7%;
-    left: 66.7%;
-  }
-
-  .go-page .go-stone--five {
-    top: 77.8%;
-    left: 22.2%;
+  .go-page .go-nav {
+    width: 100%;
+    border-top: 4px solid var(--go-accent);
+    background: rgba(255, 255, 255, 0.91);
+    padding: 1.25rem 1.5rem 1.35rem;
+    box-shadow: 0 0.75rem 2rem rgba(39, 49, 58, 0.14);
   }
 
   .go-page .go-records {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0;
     padding: 0;
     list-style: none;
@@ -86,49 +56,45 @@ nav: false
   }
 
   .go-page .go-records li {
-    display: grid;
-    grid-template-columns: 2.25rem minmax(0, 1fr);
-    gap: 0.75rem;
-    align-items: baseline;
-    border-bottom: 1px solid var(--global-divider-color);
     counter-increment: go-record;
+    border-left: 1px solid #c7d0d0;
+    padding: 0 1rem;
+  }
+
+  .go-page .go-records li:first-child {
+    border-left: 0;
+    padding-left: 0;
   }
 
   .go-page .go-records li::before {
+    display: block;
     content: '0' counter(go-record);
     color: var(--go-accent);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
   }
 
   .go-page .go-records a {
     display: flex;
-    align-items: baseline;
+    min-height: 4.5rem;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
-    min-height: 5.25rem;
-    padding: 1.35rem 0.85rem;
-    border-left: 5px solid transparent;
-    transition: border-color 160ms ease, background-color 160ms ease, padding-left 160ms ease;
-  }
-
-  .go-page .go-records a:hover {
-    border-left-color: var(--go-accent);
-    background-color: rgba(15, 118, 110, 0.07);
-    padding-left: 1.15rem;
+    gap: 0.75rem;
+    padding-top: 0.35rem;
   }
 
   .go-page .go-records strong {
     color: var(--go-ink);
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     letter-spacing: 0.03em;
   }
 
   .go-page .go-records a::after {
+    align-self: flex-end;
     content: '->';
     color: var(--go-accent);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     transition: transform 160ms ease;
   }
 
@@ -136,42 +102,55 @@ nav: false
     transform: translateX(0.3rem);
   }
 
+  .go-page .go-records a:hover strong {
+    color: var(--go-accent);
+  }
+
   html[data-theme='dark'] .go-page {
     --go-ink: #e6edf3;
+    background: #283238;
+  }
+
+  html[data-theme='dark'] .go-page .go-nav {
+    background: rgba(24, 35, 44, 0.92);
+  }
+
+  html[data-theme='dark'] .go-page .go-records li {
+    border-left-color: #506068;
   }
 
   @media (max-width: 700px) {
+    .go-page {
+      min-height: 30rem;
+    }
+
     .go-page .go-layout {
+      min-height: 30rem;
+      padding: 1rem;
+    }
+
+    .go-page .go-records {
       grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .go-page .go-records a {
-      display: block;
+      gap: 1rem;
     }
 
-    .go-page .go-records a::after {
-      display: block;
-      margin-top: 0.25rem;
+    .go-page .go-records li,
+    .go-page .go-records li:first-child {
+      border-top: 1px solid #c7d0d0;
+      border-left: 0;
+      padding: 0.9rem 0 0;
+    }
+
+    .go-page .go-records li:first-child {
+      border-top: 0;
+      padding-top: 0;
     }
   }
 </style>
 
 <div class="go-page">
   <div class="go-layout">
-    <div class="go-board-frame" aria-hidden="true">
-      <div class="go-board">
-        <span class="go-stone go-stone--black go-stone--one"></span>
-        <span class="go-stone go-stone--white go-stone--two"></span>
-        <span class="go-stone go-stone--black go-stone--three"></span>
-        <span class="go-stone go-stone--white go-stone--four"></span>
-        <span class="go-stone go-stone--black go-stone--five"></span>
-      </div>
-    </div>
-
-    <div class="go-nav">
+    <nav class="go-nav" aria-label="Go records">
       <ul class="go-records">
         <li>
           <a href="https://119020.github.io/LGU-Go/awards.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>Awards</strong></a>
@@ -183,7 +162,6 @@ nav: false
           <a href="https://119020.github.io/LGU-Go/records.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>Records</strong></a>
         </li>
       </ul>
-    </div>
-
+    </nav>
   </div>
 </div>
