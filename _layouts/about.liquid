@@ -4,9 +4,17 @@ layout: default
 <style>
   /* Keep the airy sky backdrop while using purple for the homepage accents. */
   body:has(.about-page) {
-    --global-theme-color: #7654b5;
-    --global-hover-color: #5b3e92;
-    --global-divider-color: rgba(118, 84, 181, 0.2);
+    --site-ink: #263746;
+    --site-heading: #1d2c3b;
+    --site-muted: #526474;
+    --site-link: #5f4297;
+    --site-link-hover: #432d72;
+    --site-line: rgba(38, 55, 70, 0.22);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #4b3778;
     --global-footer-text-color: #e7def8;
     --global-footer-link-color: #fbf9ff;
@@ -20,9 +28,17 @@ layout: default
   }
 
   html[data-theme='dark'] body:has(.about-page) {
-    --global-theme-color: #c0a8ed;
-    --global-hover-color: #e0d4ff;
-    --global-divider-color: rgba(192, 168, 237, 0.28);
+    --site-ink: #e6edf3;
+    --site-heading: #f5f8fb;
+    --site-muted: #b8c5d1;
+    --site-link: #c8b6ef;
+    --site-link-hover: #e6dcff;
+    --site-line: rgba(230, 237, 243, 0.24);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #2a2146;
     --global-footer-text-color: #d8cef0;
     --global-footer-link-color: #fbf9ff;
@@ -41,57 +57,42 @@ layout: default
 
   body:has(.about-page) #navbar,
   body:has(.about-page) .navbar {
-    border-bottom: 1px solid rgba(118, 84, 181, 0.18);
+    border-bottom: 1px solid var(--site-line);
     background: rgba(222, 239, 255, 0.72) !important;
     backdrop-filter: blur(12px);
   }
 
   html[data-theme='dark'] body:has(.about-page) #navbar,
   html[data-theme='dark'] body:has(.about-page) .navbar {
-    border-bottom-color: rgba(192, 168, 237, 0.25);
+    border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
   }
 
   .about-page .post-header .post-title {
     margin-bottom: 2rem;
-    color: #5a3f91;
+    color: var(--site-heading);
     font-weight: 700;
   }
 
   .about-page article {
-    color: #3f474e;
+    color: var(--site-ink);
     font-weight: 400;
   }
 
   .about-page article a,
   .about-page .post-header a,
   .about-page .selected-publications h2 a {
-    color: #7654b5;
+    color: var(--site-link);
   }
 
   .about-page article a:hover,
   .about-page .post-header a:hover,
   .about-page .selected-publications h2 a:hover {
-    color: #5b3e92;
+    color: var(--site-link-hover);
   }
 
   .about-page article h2 {
-    color: #5a3f91;
-  }
-
-  html[data-theme='dark'] .about-page article {
-    color: #e6edf3;
-  }
-
-  html[data-theme='dark'] .about-page .post-header .post-title,
-  html[data-theme='dark'] .about-page article h2 {
-    color: #f3f6f8;
-  }
-
-  html[data-theme='dark'] .about-page article a,
-  html[data-theme='dark'] .about-page .post-header a,
-  html[data-theme='dark'] .about-page .selected-publications h2 a {
-    color: #c0a8ed;
+    color: var(--site-heading);
   }
 
   .profile .more-info p {
@@ -118,8 +119,8 @@ layout: default
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
-    font-size: 2.25rem;
+    gap: 0.35rem;
+    font-size: 2.6rem;
     line-height: 1;
     white-space: nowrap;
   }
@@ -130,23 +131,23 @@ layout: default
     align-items: center;
     justify-content: center;
     line-height: 1;
-    color: #7654b5;
+    color: var(--site-link);
   }
 
   .profile .profile-social .contact-icons a:hover {
-    color: #5b3e92;
+    color: var(--site-link-hover);
   }
 
   .profile .profile-social .contact-icons a img,
   .profile .profile-social .contact-icons a svg {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.6rem;
+    height: 2.6rem;
     margin: 0;
   }
 
   .profile .profile-social .contact-icons a svg image {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .profile img {

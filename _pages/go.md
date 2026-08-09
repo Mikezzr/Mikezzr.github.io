@@ -6,12 +6,21 @@ nav: false
 
 <style>
   body:has(.go-page) {
-    --global-theme-color: #7654b5;
-    --global-hover-color: #5b3e92;
-    --global-divider-color: rgba(118, 84, 181, 0.2);
+    --site-ink: #263746;
+    --site-heading: #1d2c3b;
+    --site-muted: #526474;
+    --site-link: #5f4297;
+    --site-link-hover: #432d72;
+    --site-line: rgba(38, 55, 70, 0.22);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #4b3778;
     --global-footer-text-color: #e7def8;
     --global-footer-link-color: #fbf9ff;
+    --go-hover-bg: rgba(95, 66, 151, 0.1);
     background-color: #eef8ff;
     background-image:
       radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(255, 255, 255, 0.84) 0 44%, transparent 72%),
@@ -22,12 +31,21 @@ nav: false
   }
 
   html[data-theme='dark'] body:has(.go-page) {
-    --global-theme-color: #c0a8ed;
-    --global-hover-color: #e0d4ff;
-    --global-divider-color: rgba(192, 168, 237, 0.28);
+    --site-ink: #e6edf3;
+    --site-heading: #f5f8fb;
+    --site-muted: #b8c5d1;
+    --site-link: #c8b6ef;
+    --site-link-hover: #e6dcff;
+    --site-line: rgba(230, 237, 243, 0.24);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #2a2146;
     --global-footer-text-color: #d8cef0;
     --global-footer-link-color: #fbf9ff;
+    --go-hover-bg: rgba(200, 182, 239, 0.14);
     background-color: #101d29;
     background-image:
       radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(147, 194, 229, 0.16) 0 44%, transparent 72%),
@@ -38,20 +56,20 @@ nav: false
 
   body:has(.go-page) #navbar,
   body:has(.go-page) .navbar {
-    border-bottom: 1px solid rgba(118, 84, 181, 0.18);
+    border-bottom: 1px solid var(--site-line);
     background: rgba(222, 239, 255, 0.72) !important;
     backdrop-filter: blur(12px);
   }
 
   html[data-theme='dark'] body:has(.go-page) #navbar,
   html[data-theme='dark'] body:has(.go-page) .navbar {
-    border-bottom-color: rgba(192, 168, 237, 0.25);
+    border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
   }
 
   .go-page {
-    --go-ink: #3e315d;
-    --go-accent: #7654b5;
+    --go-ink: var(--site-ink);
+    --go-accent: var(--site-link);
     position: relative;
     isolation: isolate;
     min-height: clamp(28rem, 64vh, 44rem);
@@ -75,8 +93,8 @@ nav: false
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-    border-top: 1px solid rgba(62, 49, 93, 0.28);
-    border-bottom: 1px solid rgba(62, 49, 93, 0.28);
+    border-top: 1px solid var(--site-line);
+    border-bottom: 1px solid var(--site-line);
     background: rgba(248, 251, 255, 0.52);
     padding: clamp(0.75rem, 2.2vw, 1.25rem) 0;
     box-shadow: 0 1.5rem 3rem rgba(68, 53, 105, 0.12);
@@ -95,13 +113,13 @@ nav: false
 
   .go-page .go-records li {
     counter-increment: go-record;
-    border-left: 1px solid rgba(62, 49, 93, 0.22);
+    border-left: 1px solid var(--site-line);
     padding: 1.35rem clamp(1.15rem, 3vw, 2.4rem) 1.5rem;
     transition: background-color 160ms ease, color 160ms ease;
   }
 
   .go-page .go-records li:hover {
-    background: rgba(118, 84, 181, 0.1);
+    background: var(--go-hover-bg);
   }
 
   .go-page .go-records li:first-child {
@@ -149,22 +167,14 @@ nav: false
     color: var(--go-accent);
   }
 
-  html[data-theme='dark'] .go-page {
-    --go-ink: #f0eaff;
-  }
-
   html[data-theme='dark'] .go-page .go-nav {
-    border-top-color: rgba(192, 168, 237, 0.45);
-    border-bottom-color: rgba(192, 168, 237, 0.45);
+    border-top-color: var(--site-line);
+    border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.54);
   }
 
   html[data-theme='dark'] .go-page .go-records li {
-    border-left-color: rgba(192, 168, 237, 0.3);
-  }
-
-  html[data-theme='dark'] .go-page .go-records li:hover {
-    background: rgba(192, 168, 237, 0.12);
+    border-left-color: var(--site-line);
   }
 
   @media (max-width: 700px) {
@@ -184,7 +194,7 @@ nav: false
 
     .go-page .go-records li,
     .go-page .go-records li:first-child {
-      border-top: 1px solid rgba(62, 49, 93, 0.22);
+      border-top: 1px solid var(--site-line);
       border-left: 0;
       padding: 1rem 1.1rem 1.1rem;
     }

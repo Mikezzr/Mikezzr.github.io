@@ -10,9 +10,17 @@ nav_order: 1
 
 <style>
   body:has(.publication-page) {
-    --global-theme-color: #7654b5;
-    --global-hover-color: #5b3e92;
-    --global-divider-color: rgba(118, 84, 181, 0.2);
+    --site-ink: #263746;
+    --site-heading: #1d2c3b;
+    --site-muted: #526474;
+    --site-link: #5f4297;
+    --site-link-hover: #432d72;
+    --site-line: rgba(38, 55, 70, 0.22);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #4b3778;
     --global-footer-text-color: #e7def8;
     --global-footer-link-color: #fbf9ff;
@@ -26,9 +34,17 @@ nav_order: 1
   }
 
   html[data-theme='dark'] body:has(.publication-page) {
-    --global-theme-color: #c0a8ed;
-    --global-hover-color: #e0d4ff;
-    --global-divider-color: rgba(192, 168, 237, 0.28);
+    --site-ink: #e6edf3;
+    --site-heading: #f5f8fb;
+    --site-muted: #b8c5d1;
+    --site-link: #c8b6ef;
+    --site-link-hover: #e6dcff;
+    --site-line: rgba(230, 237, 243, 0.24);
+    --global-text-color: var(--site-ink);
+    --global-text-color-light: var(--site-muted);
+    --global-theme-color: var(--site-link);
+    --global-hover-color: var(--site-link-hover);
+    --global-divider-color: var(--site-line);
     --global-footer-bg-color: #2a2146;
     --global-footer-text-color: #d8cef0;
     --global-footer-link-color: #fbf9ff;
@@ -42,41 +58,33 @@ nav_order: 1
 
   body:has(.publication-page) #navbar,
   body:has(.publication-page) .navbar {
-    border-bottom: 1px solid rgba(118, 84, 181, 0.18);
+    border-bottom: 1px solid var(--site-line);
     background: rgba(222, 239, 255, 0.72) !important;
     backdrop-filter: blur(12px);
   }
 
   html[data-theme='dark'] body:has(.publication-page) #navbar,
   html[data-theme='dark'] body:has(.publication-page) .navbar {
-    border-bottom-color: rgba(192, 168, 237, 0.25);
+    border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
   }
 
   .post-header .post-title {
-    color: #5a3f91;
+    color: var(--site-heading);
     font-weight: 700;
   }
 
   .post article {
-    color: #3f474e;
+    color: var(--site-ink);
     font-weight: 400;
   }
 
-  html[data-theme='dark'] .post-header .post-title {
-    color: #f3f6f8;
-  }
-
-  html[data-theme='dark'] .post article {
-    color: #e6edf3;
-  }
-
   .publication-page a {
-    color: #7654b5;
+    color: var(--site-link);
   }
 
   .publication-page a:hover {
-    color: #5b3e92;
+    color: var(--site-link-hover);
   }
 
   .publication-list .publications .row {
