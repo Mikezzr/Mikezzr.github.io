@@ -2,23 +2,83 @@
 layout: default
 ---
 <style>
-  .post-header .post-title {
+  /* The about page gets its own restrained blue palette and sky-like backdrop. */
+  body:has(.about-page) {
+    --global-theme-color: #1769aa;
+    --global-hover-color: #0f4f82;
+    --global-divider-color: rgba(23, 105, 170, 0.2);
+    --global-footer-bg-color: #164d78;
+    --global-footer-text-color: #d9ebf8;
+    --global-footer-link-color: #f2f9ff;
+    background-color: #eef8ff;
+    background-image:
+      radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(255, 255, 255, 0.84) 0 44%, transparent 72%),
+      radial-gradient(ellipse 15rem 4.5rem at 24% 14%, rgba(255, 255, 255, 0.68) 0 42%, transparent 72%),
+      radial-gradient(ellipse 21rem 6rem at 83% 18%, rgba(255, 255, 255, 0.75) 0 40%, transparent 72%),
+      linear-gradient(180deg, #d9efff 0%, #edf8ff 42%, #ffffff 100%);
+    background-attachment: fixed;
+  }
+
+  html[data-theme='dark'] body:has(.about-page) {
+    --global-theme-color: #79b9e8;
+    --global-hover-color: #a6d4f4;
+    --global-divider-color: rgba(121, 185, 232, 0.28);
+    --global-footer-bg-color: #0b2942;
+    --global-footer-text-color: #c7deef;
+    --global-footer-link-color: #eef8ff;
+    background-color: #101d29;
+    background-image:
+      radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(147, 194, 229, 0.16) 0 44%, transparent 72%),
+      radial-gradient(ellipse 15rem 4.5rem at 24% 14%, rgba(147, 194, 229, 0.12) 0 42%, transparent 72%),
+      radial-gradient(ellipse 21rem 6rem at 83% 18%, rgba(147, 194, 229, 0.14) 0 40%, transparent 72%),
+      linear-gradient(180deg, #122b40 0%, #101d29 55%, #0d151d 100%);
+  }
+
+  .about-page {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .about-page .post-header .post-title {
     margin-bottom: 2rem;
-    color: #25313b;
+    color: #214b72;
     font-weight: 700;
   }
 
-  .post article {
+  .about-page article {
     color: #3f474e;
     font-weight: 400;
   }
 
-  html[data-theme='dark'] .post article {
+  .about-page article a,
+  .about-page .post-header a,
+  .about-page .selected-publications h2 a {
+    color: #1769aa;
+  }
+
+  .about-page article a:hover,
+  .about-page .post-header a:hover,
+  .about-page .selected-publications h2 a:hover {
+    color: #0f4f82;
+  }
+
+  .about-page article h2 {
+    color: #214b72;
+  }
+
+  html[data-theme='dark'] .about-page article {
     color: #e6edf3;
   }
 
-  html[data-theme='dark'] .post-header .post-title {
+  html[data-theme='dark'] .about-page .post-header .post-title,
+  html[data-theme='dark'] .about-page article h2 {
     color: #f3f6f8;
+  }
+
+  html[data-theme='dark'] .about-page article a,
+  html[data-theme='dark'] .about-page .post-header a,
+  html[data-theme='dark'] .about-page .selected-publications h2 a {
+    color: #79b9e8;
   }
 
   .profile .more-info p {
@@ -57,6 +117,11 @@ layout: default
     align-items: center;
     justify-content: center;
     line-height: 1;
+    color: #1769aa;
+  }
+
+  .profile .profile-social .contact-icons a:hover {
+    color: #0f4f82;
   }
 
   .profile .profile-social .contact-icons a img,
@@ -164,7 +229,7 @@ layout: default
   }
 </style>
 
-<div class="post">
+<div class="post about-page">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}

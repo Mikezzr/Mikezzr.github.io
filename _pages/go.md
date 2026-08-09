@@ -6,15 +6,18 @@ nav: false
 
 <style>
   .go-page {
-    --go-ink: #27313a;
-    --go-accent: #0f766e;
+    --go-ink: #263746;
+    --go-accent: #176b78;
     position: relative;
     isolation: isolate;
-    min-height: 26rem;
+    min-height: clamp(36rem, 76vh, 52rem);
     overflow: hidden;
-    margin-top: 1.5rem;
-    background: #f1e5cf;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid rgba(38, 55, 70, 0.16);
+    border-radius: 1rem;
+    background: #e9dfcc;
     color: var(--go-ink);
+    box-shadow: 0 1.25rem 3rem rgba(38, 55, 70, 0.15);
   }
 
   .go-page::before {
@@ -25,30 +28,45 @@ nav: false
     background-position: center;
     background-size: cover;
     content: '';
-    filter: saturate(0.65) contrast(0.92);
-    opacity: 0.16;
+    filter: saturate(0.65) contrast(0.9);
+    opacity: 0.26;
+    transform: scale(1.035);
+  }
+
+  .go-page::after {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 252, 244, 0.12), rgba(255, 252, 244, 0.56));
+    content: '';
+    pointer-events: none;
   }
 
   .go-page .go-layout {
     position: relative;
     z-index: 1;
     display: flex;
-    min-height: 26rem;
+    min-height: inherit;
     align-items: flex-end;
-    padding: 2rem;
+    padding: clamp(1rem, 4vw, 3.5rem);
   }
 
   .go-page .go-nav {
     width: 100%;
-    border-top: 4px solid var(--go-accent);
-    background: rgba(255, 255, 255, 0.91);
-    padding: 1.25rem 1.5rem 1.35rem;
-    box-shadow: 0 0.75rem 2rem rgba(39, 49, 58, 0.14);
+    max-width: 960px;
+    margin: 0 auto;
+    border: 1px solid rgba(38, 55, 70, 0.2);
+    border-top: 6px solid var(--go-accent);
+    background: rgba(255, 255, 255, 0.86);
+    padding: clamp(1.35rem, 3.2vw, 2.6rem);
+    box-shadow: 0 1rem 2.5rem rgba(39, 49, 58, 0.2);
+    backdrop-filter: blur(4px);
   }
 
   .go-page .go-records {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -57,13 +75,17 @@ nav: false
 
   .go-page .go-records li {
     counter-increment: go-record;
-    border-left: 1px solid #c7d0d0;
-    padding: 0 1rem;
+    border: 1px solid rgba(38, 55, 70, 0.16);
+    border-top: 3px solid rgba(23, 107, 120, 0.42);
+    background: rgba(255, 255, 255, 0.56);
+    padding: 1.1rem 1.2rem 1.25rem;
+    transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
   }
 
-  .go-page .go-records li:first-child {
-    border-left: 0;
-    padding-left: 0;
+  .go-page .go-records li:hover {
+    border-color: var(--go-accent);
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-0.35rem);
   }
 
   .go-page .go-records li::before {
@@ -77,24 +99,24 @@ nav: false
 
   .go-page .go-records a {
     display: flex;
-    min-height: 4.5rem;
+    min-height: 8.5rem;
     flex-direction: column;
     justify-content: space-between;
-    gap: 0.75rem;
-    padding-top: 0.35rem;
+    gap: 1.2rem;
+    padding-top: 0.6rem;
   }
 
   .go-page .go-records strong {
     color: var(--go-ink);
-    font-size: 1.45rem;
-    letter-spacing: 0.03em;
+    font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+    letter-spacing: 0.02em;
   }
 
   .go-page .go-records a::after {
     align-self: flex-end;
     content: '->';
     color: var(--go-accent);
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     transition: transform 160ms ease;
   }
 
@@ -108,24 +130,25 @@ nav: false
 
   html[data-theme='dark'] .go-page {
     --go-ink: #e6edf3;
-    background: #283238;
+    background: #26343d;
   }
 
   html[data-theme='dark'] .go-page .go-nav {
-    background: rgba(24, 35, 44, 0.92);
+    background: rgba(24, 35, 44, 0.9);
   }
 
   html[data-theme='dark'] .go-page .go-records li {
-    border-left-color: #506068;
+    border-color: #506068;
+    background: rgba(24, 35, 44, 0.64);
   }
 
   @media (max-width: 700px) {
     .go-page {
-      min-height: 30rem;
+      min-height: 34rem;
     }
 
     .go-page .go-layout {
-      min-height: 30rem;
+      min-height: inherit;
       padding: 1rem;
     }
 
@@ -136,14 +159,21 @@ nav: false
 
     .go-page .go-records li,
     .go-page .go-records li:first-child {
-      border-top: 1px solid #c7d0d0;
-      border-left: 0;
+      border-top: 1px solid rgba(38, 55, 70, 0.16);
       padding: 0.9rem 0 0;
     }
 
     .go-page .go-records li:first-child {
       border-top: 0;
       padding-top: 0;
+    }
+
+    .go-page .go-records li {
+      padding: 1rem 1.1rem 1.1rem;
+    }
+
+    .go-page .go-records a {
+      min-height: 6.5rem;
     }
   }
 </style>

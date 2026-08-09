@@ -2,7 +2,6 @@
 layout: page
 permalink: /competitive-programming/
 title: Competitive Programming
-description:
 nav: false
 ---
 
