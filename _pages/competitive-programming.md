@@ -79,6 +79,12 @@ nav: false
     color: var(--site-link-hover) !important;
   }
 
+  html[data-theme='dark'] #navbar a:hover,
+  html[data-theme='dark'] .navbar a:hover {
+    background-color: rgba(200, 182, 239, 0.26) !important;
+    color: #f5f8fb !important;
+  }
+
   .cp-page {
     --cp-accent: var(--site-link);
     color: var(--site-ink);
