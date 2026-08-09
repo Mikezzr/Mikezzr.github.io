@@ -98,16 +98,16 @@ nav: false
         <div><strong>Second Place, 2nd CUHK-Shenzhen Programming Contest</strong></div>
       </li>
       <li>
-        <span class="cp-year">2023</span>
-        <div><strong>Gold Medal, 48th ICPC Jinan Regional</strong></div>
-      </li>
-      <li>
         <span class="cp-year">2024</span>
         <div><strong>Gold Medal, 49th ICPC Kunming Regional</strong></div>
       </li>
       <li>
         <span class="cp-year">2023</span>
         <div><strong>Third Place, 48th ICPC Macau Regional (Advanced to the 48th ICPC World Finals)</strong></div>
+      </li>
+      <li>
+        <span class="cp-year">2023</span>
+        <div><strong>Gold Medal, 48th ICPC Jinan Regional</strong></div>
       </li>
       <li>
         <span class="cp-year">2023</span>

@@ -15,7 +15,7 @@ nav: false
 
   .go-page .go-layout {
     display: grid;
-    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1fr);
+    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
     gap: 2.5rem;
     align-items: center;
     margin-top: 1.5rem;
@@ -107,13 +107,22 @@ nav: false
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 0;
+    min-height: 5.25rem;
+    padding: 1.35rem 0.85rem;
+    border-left: 5px solid transparent;
+    transition: border-color 160ms ease, background-color 160ms ease, padding-left 160ms ease;
+  }
+
+  .go-page .go-records a:hover {
+    border-left-color: var(--go-accent);
+    background-color: rgba(15, 118, 110, 0.07);
+    padding-left: 1.15rem;
   }
 
   .go-page .go-records strong {
     color: var(--go-ink);
-    font-size: 1.08rem;
-    text-transform: lowercase;
+    font-size: 1.35rem;
+    letter-spacing: 0.03em;
   }
 
   .go-page .go-records a::after {
@@ -162,17 +171,16 @@ nav: false
       </div>
     </div>
 
-    <div>
-      <h2>Records</h2>
+    <div class="go-nav">
       <ul class="go-records">
         <li>
-          <a href="https://119020.github.io/LGU-Go/awards.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>awards</strong></a>
+          <a href="https://119020.github.io/LGU-Go/awards.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>Awards</strong></a>
         </li>
         <li>
-          <a href="https://119020.github.io/LGU-Go/history.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>history</strong></a>
+          <a href="https://119020.github.io/LGU-Go/history.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>History</strong></a>
         </li>
         <li>
-          <a href="https://119020.github.io/LGU-Go/records.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>records</strong></a>
+          <a href="https://119020.github.io/LGU-Go/records.html?player_id=2&amp;player_name=%E6%9B%BE%E5%AD%90%E8%8D%A3" target="_blank" rel="noopener"><strong>Records</strong></a>
         </li>
       </ul>
     </div>

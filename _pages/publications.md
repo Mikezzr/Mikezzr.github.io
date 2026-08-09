@@ -10,6 +10,24 @@ nav_order: 1
 <!-- _pages/publications.md -->
 
 <style>
+  .post-header .post-title {
+    color: #18232c;
+    font-weight: 800;
+  }
+
+  .post article {
+    color: #2f3437;
+    font-weight: 500;
+  }
+
+  html[data-theme='dark'] .post-header .post-title {
+    color: #f3f6f8;
+  }
+
+  html[data-theme='dark'] .post article {
+    color: #e6edf3;
+  }
+
   .publication-list .publications .row {
     display: flex;
     flex-wrap: nowrap;
