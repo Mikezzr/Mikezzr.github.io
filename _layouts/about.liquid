@@ -2,14 +2,14 @@
 layout: default
 ---
 <style>
-  /* The about page gets its own restrained blue palette and sky-like backdrop. */
+  /* Keep the airy sky backdrop while using purple for the homepage accents. */
   body:has(.about-page) {
-    --global-theme-color: #1769aa;
-    --global-hover-color: #0f4f82;
-    --global-divider-color: rgba(23, 105, 170, 0.2);
-    --global-footer-bg-color: #164d78;
-    --global-footer-text-color: #d9ebf8;
-    --global-footer-link-color: #f2f9ff;
+    --global-theme-color: #7654b5;
+    --global-hover-color: #5b3e92;
+    --global-divider-color: rgba(118, 84, 181, 0.2);
+    --global-footer-bg-color: #4b3778;
+    --global-footer-text-color: #e7def8;
+    --global-footer-link-color: #fbf9ff;
     background-color: #eef8ff;
     background-image:
       radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(255, 255, 255, 0.84) 0 44%, transparent 72%),
@@ -20,12 +20,12 @@ layout: default
   }
 
   html[data-theme='dark'] body:has(.about-page) {
-    --global-theme-color: #79b9e8;
-    --global-hover-color: #a6d4f4;
-    --global-divider-color: rgba(121, 185, 232, 0.28);
-    --global-footer-bg-color: #0b2942;
-    --global-footer-text-color: #c7deef;
-    --global-footer-link-color: #eef8ff;
+    --global-theme-color: #c0a8ed;
+    --global-hover-color: #e0d4ff;
+    --global-divider-color: rgba(192, 168, 237, 0.28);
+    --global-footer-bg-color: #2a2146;
+    --global-footer-text-color: #d8cef0;
+    --global-footer-link-color: #fbf9ff;
     background-color: #101d29;
     background-image:
       radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(147, 194, 229, 0.16) 0 44%, transparent 72%),
@@ -39,9 +39,22 @@ layout: default
     isolation: isolate;
   }
 
+  body:has(.about-page) #navbar,
+  body:has(.about-page) .navbar {
+    border-bottom: 1px solid rgba(118, 84, 181, 0.18);
+    background: rgba(222, 239, 255, 0.72) !important;
+    backdrop-filter: blur(12px);
+  }
+
+  html[data-theme='dark'] body:has(.about-page) #navbar,
+  html[data-theme='dark'] body:has(.about-page) .navbar {
+    border-bottom-color: rgba(192, 168, 237, 0.25);
+    background: rgba(20, 30, 46, 0.74) !important;
+  }
+
   .about-page .post-header .post-title {
     margin-bottom: 2rem;
-    color: #214b72;
+    color: #5a3f91;
     font-weight: 700;
   }
 
@@ -53,17 +66,17 @@ layout: default
   .about-page article a,
   .about-page .post-header a,
   .about-page .selected-publications h2 a {
-    color: #1769aa;
+    color: #7654b5;
   }
 
   .about-page article a:hover,
   .about-page .post-header a:hover,
   .about-page .selected-publications h2 a:hover {
-    color: #0f4f82;
+    color: #5b3e92;
   }
 
   .about-page article h2 {
-    color: #214b72;
+    color: #5a3f91;
   }
 
   html[data-theme='dark'] .about-page article {
@@ -78,7 +91,7 @@ layout: default
   html[data-theme='dark'] .about-page article a,
   html[data-theme='dark'] .about-page .post-header a,
   html[data-theme='dark'] .about-page .selected-publications h2 a {
-    color: #79b9e8;
+    color: #c0a8ed;
   }
 
   .profile .more-info p {
@@ -117,11 +130,11 @@ layout: default
     align-items: center;
     justify-content: center;
     line-height: 1;
-    color: #1769aa;
+    color: #7654b5;
   }
 
   .profile .profile-social .contact-icons a:hover {
-    color: #0f4f82;
+    color: #5b3e92;
   }
 
   .profile .profile-social .contact-icons a img,

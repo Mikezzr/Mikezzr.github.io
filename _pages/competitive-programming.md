@@ -6,8 +6,52 @@ nav: false
 ---
 
 <style>
+  body:has(.cp-page) {
+    --global-theme-color: #7654b5;
+    --global-hover-color: #5b3e92;
+    --global-divider-color: rgba(118, 84, 181, 0.2);
+    --global-footer-bg-color: #4b3778;
+    --global-footer-text-color: #e7def8;
+    --global-footer-link-color: #fbf9ff;
+    background-color: #eef8ff;
+    background-image:
+      radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(255, 255, 255, 0.84) 0 44%, transparent 72%),
+      radial-gradient(ellipse 15rem 4.5rem at 24% 14%, rgba(255, 255, 255, 0.68) 0 42%, transparent 72%),
+      radial-gradient(ellipse 21rem 6rem at 83% 18%, rgba(255, 255, 255, 0.75) 0 40%, transparent 72%),
+      linear-gradient(180deg, #d9efff 0%, #edf8ff 42%, #ffffff 100%);
+    background-attachment: fixed;
+  }
+
+  html[data-theme='dark'] body:has(.cp-page) {
+    --global-theme-color: #c0a8ed;
+    --global-hover-color: #e0d4ff;
+    --global-divider-color: rgba(192, 168, 237, 0.28);
+    --global-footer-bg-color: #2a2146;
+    --global-footer-text-color: #d8cef0;
+    --global-footer-link-color: #fbf9ff;
+    background-color: #101d29;
+    background-image:
+      radial-gradient(ellipse 19rem 5.5rem at 9% 8%, rgba(147, 194, 229, 0.16) 0 44%, transparent 72%),
+      radial-gradient(ellipse 15rem 4.5rem at 24% 14%, rgba(147, 194, 229, 0.12) 0 42%, transparent 72%),
+      radial-gradient(ellipse 21rem 6rem at 83% 18%, rgba(147, 194, 229, 0.14) 0 40%, transparent 72%),
+      linear-gradient(180deg, #122b40 0%, #101d29 55%, #0d151d 100%);
+  }
+
+  body:has(.cp-page) #navbar,
+  body:has(.cp-page) .navbar {
+    border-bottom: 1px solid rgba(118, 84, 181, 0.18);
+    background: rgba(222, 239, 255, 0.72) !important;
+    backdrop-filter: blur(12px);
+  }
+
+  html[data-theme='dark'] body:has(.cp-page) #navbar,
+  html[data-theme='dark'] body:has(.cp-page) .navbar {
+    border-bottom-color: rgba(192, 168, 237, 0.25);
+    background: rgba(20, 30, 46, 0.74) !important;
+  }
+
   .cp-page {
-    --cp-accent: #0f766e;
+    --cp-accent: #7654b5;
     --cp-coral: #c05640;
     color: #2f3437;
   }
