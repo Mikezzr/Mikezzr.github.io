@@ -14,9 +14,9 @@ nav: false
 
   .go-page h2 {
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     border-bottom: 2px solid var(--go-accent);
-    padding-bottom: 0.45rem;
+    padding-bottom: 0.5rem;
   }
 
   .go-page .go-records {
@@ -26,7 +26,16 @@ nav: false
   }
 
   .go-page .go-records li {
+    counter-increment: go-record;
     border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .go-page .go-records li::before {
+    content: '0' counter(go-record);
+    color: var(--go-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
 
   .go-page .go-records a {
@@ -38,13 +47,29 @@ nav: false
   }
 
   .go-page .go-records strong {
-    color: var(--go-accent);
+    color: #25313b;
     font-size: 1.05rem;
   }
 
   .go-page .go-records span {
-    color: #4b5563;
+    color: #5b6470;
     font-size: 0.92rem;
+  }
+
+  .go-page .go-records {
+    counter-reset: go-record;
+  }
+
+  .go-page .go-records li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.9rem 0;
+  }
+
+  html[data-theme='dark'] .go-page .go-records strong {
+    color: #e6edf3;
   }
 
   html[data-theme='dark'] .go-page {
