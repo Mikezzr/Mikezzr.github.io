@@ -3,7 +3,7 @@ layout: default
 ---
 <style>
   /* Keep the airy sky backdrop while using purple for the homepage accents. */
-  body:has(.about-page) {
+  body {
     --site-ink: #263746;
     --site-heading: #1d2c3b;
     --site-muted: #526474;
@@ -27,7 +27,7 @@ layout: default
     background-attachment: fixed;
   }
 
-  html[data-theme='dark'] body:has(.about-page) {
+  html[data-theme='dark'] body {
     --site-ink: #e6edf3;
     --site-heading: #f5f8fb;
     --site-muted: #b8c5d1;
@@ -55,21 +55,21 @@ layout: default
     isolation: isolate;
   }
 
-  body:has(.about-page) #navbar,
-  body:has(.about-page) .navbar {
+  #navbar,
+  .navbar {
     border-bottom: 1px solid var(--site-line);
     background: rgba(222, 239, 255, 0.72) !important;
     backdrop-filter: blur(12px);
   }
 
-  html[data-theme='dark'] body:has(.about-page) #navbar,
-  html[data-theme='dark'] body:has(.about-page) .navbar {
+  html[data-theme='dark'] #navbar,
+  html[data-theme='dark'] .navbar {
     border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
   }
 
-  body:has(.about-page) #navbar a:hover,
-  body:has(.about-page) .navbar a:hover {
+  #navbar a:hover,
+  .navbar a:hover {
     border-radius: 0.25rem;
     background-color: rgba(118, 84, 181, 0.14) !important;
     color: var(--site-link-hover) !important;

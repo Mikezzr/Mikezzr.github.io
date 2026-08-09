@@ -9,7 +9,7 @@ nav_order: 1
 <!-- _pages/publications.md -->
 
 <style>
-  body:has(.publication-page) {
+  body {
     --site-ink: #263746;
     --site-heading: #1d2c3b;
     --site-muted: #526474;
@@ -33,7 +33,7 @@ nav_order: 1
     background-attachment: fixed;
   }
 
-  html[data-theme='dark'] body:has(.publication-page) {
+  html[data-theme='dark'] body {
     --site-ink: #e6edf3;
     --site-heading: #f5f8fb;
     --site-muted: #b8c5d1;
@@ -56,21 +56,21 @@ nav_order: 1
       linear-gradient(180deg, #122b40 0%, #101d29 55%, #0d151d 100%);
   }
 
-  body:has(.publication-page) #navbar,
-  body:has(.publication-page) .navbar {
+  #navbar,
+  .navbar {
     border-bottom: 1px solid var(--site-line);
     background: rgba(222, 239, 255, 0.72) !important;
     backdrop-filter: blur(12px);
   }
 
-  html[data-theme='dark'] body:has(.publication-page) #navbar,
-  html[data-theme='dark'] body:has(.publication-page) .navbar {
+  html[data-theme='dark'] #navbar,
+  html[data-theme='dark'] .navbar {
     border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
   }
 
-  body:has(.publication-page) #navbar a:hover,
-  body:has(.publication-page) .navbar a:hover {
+  #navbar a:hover,
+  .navbar a:hover {
     border-radius: 0.25rem;
     background-color: rgba(118, 84, 181, 0.14) !important;
     color: var(--site-link-hover) !important;
