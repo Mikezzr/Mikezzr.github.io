@@ -13,8 +13,8 @@ nav_order: 1
     --site-ink: #263746;
     --site-heading: #1d2c3b;
     --site-muted: #526474;
-    --site-link: #5f4297;
-    --site-link-hover: #432d72;
+    --site-link: #7654b5;
+    --site-link-hover: #5d3c8f;
     --site-line: rgba(38, 55, 70, 0.22);
     --global-text-color: var(--site-ink);
     --global-text-color-light: var(--site-muted);
@@ -67,6 +67,13 @@ nav_order: 1
   html[data-theme='dark'] body:has(.publication-page) .navbar {
     border-bottom-color: var(--site-line);
     background: rgba(20, 30, 46, 0.74) !important;
+  }
+
+  body:has(.publication-page) #navbar a:hover,
+  body:has(.publication-page) .navbar a:hover {
+    border-radius: 0.25rem;
+    background-color: rgba(118, 84, 181, 0.14) !important;
+    color: var(--site-link-hover) !important;
   }
 
   .post-header .post-title {
