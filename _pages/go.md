@@ -109,7 +109,7 @@ nav: false
     border-top: 1px solid var(--site-line);
     border-bottom: 1px solid var(--site-line);
     background: rgba(248, 251, 255, 0.52);
-    padding: clamp(0.75rem, 2.2vw, 1.25rem) 0;
+    padding: clamp(0.65rem, 1.8vw, 1rem) 0;
     box-shadow: 0 1.5rem 3rem rgba(68, 53, 105, 0.12);
     backdrop-filter: blur(8px);
   }
@@ -127,7 +127,7 @@ nav: false
   .go-page .go-records li {
     counter-increment: go-record;
     border-left: 1px solid var(--site-line);
-    padding: 1.35rem clamp(1.15rem, 3vw, 2.4rem) 1.5rem;
+    padding: 1.15rem clamp(1.05rem, 2.6vw, 2.15rem) 1.3rem;
     transition: background-color 160ms ease, color 160ms ease;
   }
 
@@ -150,17 +150,17 @@ nav: false
 
   .go-page .go-records a {
     display: flex;
-    min-height: 10rem;
+    min-height: 9rem;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.5rem;
-    padding-top: 0.9rem;
+    gap: 1.25rem;
+    padding-top: 0.75rem;
     text-decoration: none;
   }
 
   .go-page .go-records strong {
     color: var(--go-ink);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.65rem, 3.5vw, 2.65rem);
     letter-spacing: 0.01em;
   }
 
@@ -168,7 +168,7 @@ nav: false
     align-self: flex-end;
     content: '\2197';
     color: var(--go-accent);
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     transition: transform 160ms ease;
   }
 
@@ -209,16 +209,16 @@ nav: false
     .go-page .go-records li:first-child {
       border-top: 1px solid var(--site-line);
       border-left: 0;
-      padding: 1rem 1.1rem 1.1rem;
+      padding: 0.85rem 1rem 0.95rem;
     }
 
     .go-page .go-records li:first-child {
       border-top: 0;
-      padding-top: 0.5rem;
+      padding-top: 0.4rem;
     }
 
     .go-page .go-records a {
-      min-height: 6rem;
+      min-height: 5.4rem;
     }
   }
 </style>
