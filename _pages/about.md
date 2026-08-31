@@ -25,10 +25,10 @@ latest_posts:
   limit: 3
 ---
 
-I am an incoming PhD student at CUHK-Shenzhen x SLAI. I am fortunate to be supervised by [Prof. Zhi-Quan (Tom) Luo](https://tomluo123.github.io/).
+I am a first-year PhD student at CUHK-Shenzhen x SLAI. I am fortunate to be supervised by [Prof. Zhi-Quan (Tom) Luo](https://tomluo123.github.io/).
 
-I am broadly interested in anything that moves us toward AGI, including reinforcement learning, large language models, and world models. I am particularly inspired by work from Google DeepMind, such as AlphaGo, AlphaFold, and AlphaEvolve.
+I am broadly interested in everything that moves us toward AGI, including AI agents, AI infra and LLM training algorithms. I am deeply inspired by work from Google DeepMind, especially AlphaGo, since I am a Go player.
 
-I enjoy thinking deeply about challenging problems and favor simple yet effective ideas. Feel free to reach out if you would like to chat.
+I enjoy thinking about challenging problems and favor simple yet effective ideas. Feel free to reach out if you would like to chat.
 
-Beyond research, I enjoy [competitive programming]({{ '/competitive-programming/' | relative_url }}), [Go]({{ '/go/' | relative_url }}), and badminton.
+Beyond research, I like [competitive programming]({{ '/competitive-programming/' | relative_url }}), [Go]({{ '/go/' | relative_url }}), and badminton.
